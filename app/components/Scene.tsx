@@ -2,7 +2,12 @@
 import React, { useMemo } from "react";
 
 import { Canvas } from "@react-three/fiber";
-import { Float, OrbitControls, Environment } from "@react-three/drei";
+import {
+  Float,
+  OrbitControls,
+  Environment,
+  PerspectiveCamera,
+} from "@react-three/drei";
 import { RootContainer } from "@coconut-xr/koestlich";
 import colors from "../theme/colors";
 import { Glass } from "@coconut-xr/apfel-kruemel";
@@ -17,9 +22,9 @@ export default function Scene({ children }: SceneProps) {
   const mesh = useMemo(() => new RectMesh(), []);
   return (
     <div className="h-screen">
-      <Canvas camera={{ position: [5, 10, 5] }}>
+      <Canvas camera={{ position: [0, 5, 0] }}>
         <Environment
-          files={"/lepzig.hdr"}
+          files={"/postdamer.hdr"}
           ground={{ height: 30, radius: 100, scale: 100 }}
         />
         <OrbitControls />
